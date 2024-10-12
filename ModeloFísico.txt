@@ -1,0 +1,35 @@
+-- Criando a nossa database Vinho.
+CREATE DATABASE IF NOT EXISTS Vinho DEFAULT CHARACTER SET utf8;
+USE Vinho;
+
+-- Tabela Região.
+CREATE TABLE Regiao (
+    codRegiao BIGINT NOT NULL AUTO_INCREMENT,
+    nomeRegiao VARCHAR(100) NOT NULL,
+    descricaoRegiao TEXT NULL,
+    PRIMARY KEY (codRegiao)
+);
+
+-- Tabela Vinícola.
+CREATE TABLE Vinicola (
+    codVinicola BIGINT NOT NULL AUTO_INCREMENT,
+    nomeVinicola VARCHAR(100) NOT NULL,
+    descricaoVinicola TEXT NULL,
+    foneVinicola VARCHAR(15) NULL,
+    emailVinicola VARCHAR(15) NULL,
+    codRegiao BIGINT NOT NULL,
+    PRIMARY KEY (codVinicola),
+    FOREIGN KEY (codRegiao) REFERENCES Regiao(codRegiao)
+); 
+
+-- Tabela Vinho.
+CREATE TABLE Vinho (
+    codVinho BIGINT NOT NULL AUTO_INCREMENT,
+    nomeVinho VARCHAR(50) NOT NULL,
+    tipoVinho VARCHAR(30) NOT NULL,
+    anoVinho INT NOT NULL,
+    descricaoVinho TEXT NULL,
+    codVinicola BIGINT NOT NULL,
+    PRIMARY KEY (codVinho),
+    FOREIGN KEY (codVinicola) REFERENCES Vinicola(codVinicola)
+);

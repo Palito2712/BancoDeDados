@@ -1,0 +1,11 @@
+-- Criando o usuário 'Somellier'.
+CREATE USER 'Somellier'@'localhost' IDENTIFIED BY 'senha_segura';
+
+-- Concedendo permissões de select apenas na tabela Vinho.
+GRANT SELECT ON Vinho.Vinho TO 'Somellier'@'localhost';
+
+-- Concedendo permissões de select apenas nas colunas codVinicola e nomeVinicola da tabela Vinicola.
+GRANT SELECT (codVinicola, nomeVinicola) ON Vinho.Vinicola TO 'Somellier'@'localhost';
+
+-- Limitando o número de consultas a 40 por hora.
+ALTER USER 'Somellier'@'localhost' WITH MAX_QUERIES_PER_HOUR 40;

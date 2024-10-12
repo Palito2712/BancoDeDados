@@ -1,0 +1,26 @@
+-- Inserindo os dados na tabela Regiao.
+INSERT INTO vinho.regiao (nomeRegiao, descricaoRegiao)
+VALUES 
+('Bordeaux', 'Região famosa pela produção de vinhos tintos franceses.'),
+('Toscana', 'Famosa pela produção de vinhos italianos.'),
+('Porto', 'Melhor região de vinhos em Portugal.'),
+('Valle Central', 'Uma das principais regiões de vinhos da América do Sul.'),
+('Espanha', 'Possui a maior área cultivada em vinhedos do mundo.');
+
+-- Inserindo dados na tabela Vinícola.
+INSERT INTO vinho.vinicola (nomeVinicola, descricaoVinicola, foneVinicola, emailVinicola, codRegiao)
+VALUES 
+('Château Smith Haut Lafitte', 'Vinícola de alta qualidade em Bordeaux.', '1234-5678', 'vinho@fr.com', 1),
+('Ceretto', 'Vinícola familiar na Toscana.', '2234-5678', 'vinho@it.com', 2),
+('Quinta do Crasto', 'Vinícola tradicional de Porto.', '3234-5678', 'vinho@pt.com', 3),
+('Montes', 'Uma das mais renomadas vinícolas do Chile.', '4234-5678', 'vinho@ch.com', 4),
+('Rioja', 'Vinícola histórica na Espanha.', '5234-5678', 'vinho@es.com', 5);
+
+-- Inserindo dados na tabela Vinho.
+INSERT INTO vinho.vinho (nomeVinho, tipoVinho, anoVinho, descricaoVinho, codVinicola)
+VALUES
+('Margaux', 'Tinto', 2010, 'Um vinho complexo e elegante.', 1),
+('Tignanello', 'Tinto', 2008, 'Sabor encorpado com notas de frutas.', 2),
+('Crasto Superior', 'Tinto', 2012, 'Vinho com notas de frutos vermelhos.', 3),
+('Mondavi Reserve', 'Tinto', 2019, 'Um vinho suave e sabores profundos.', 4),
+('Riserva Madrid', 'Tinto', 2017, 'Um vinho robusto com notas amadeiradas.', 5);

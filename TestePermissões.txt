@@ -1,0 +1,7 @@
+-- Teste de permissões concedidas.
+SELECT * FROM Vinho.Vinho;
+SELECT codVinicola, nomeVinicola FROM Vinho.Vinicola;
+
+-- Teste de permissões negadas.
+SELECT descricaoVinicola FROM Vinho.Vinicola;
+SELECT * FROM Vinho.Vinicola;
